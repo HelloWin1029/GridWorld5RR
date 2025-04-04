@@ -49,9 +49,9 @@ public class RR extends Critter
 	}
 	
 	public void makeMove(Location loc){
-		int dir = getLocation.getDirectionToward(loc);
+		int dir = getLocation().getDirectionToward(loc);
 		if (!loc.equals(getLocation())){
-			if (getGrid().get(loc != null){
+			if (getGrid().get(loc) != null){
 				Actor actor = getGrid().get(loc);
 				
 				if (actor instanceof Boulder){
