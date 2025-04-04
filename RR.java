@@ -21,7 +21,7 @@ public class RR extends Critter
 		
 		for (int i = 1; i <= 2; i++){
 			loc = loc.getAdjacentLocation(dir);
-			if (!getGrid().isValid() || getGrid.get(loc) != null)
+			if (!getGrid().isValid(loc) || getGrid().get(loc) != null)
 				return false;
 		}
 		loc = loc.getAdjacentLocation(dir);
@@ -37,7 +37,7 @@ public class RR extends Critter
 	}
 	
 	public ArrayList<Location> getMoveLocations(){
-		ArrayList<Locatino> locs = new ArrayList<Location>();
+		ArrayList<Location> locs = new ArrayList<Location>();
 		
 		for (int i = 0; i < 360; i += 45){
 			if (isThreeAwayValid(i)){
@@ -48,7 +48,7 @@ public class RR extends Critter
 		return locs;
 	}
 	
-	public void makeMove(){
+	public void makeMove(Location loc){
 		int dir = getLocation.getDirectionToward(loc);
 		if (!loc.equals(getLocation())){
 			if (getGrid().get(loc != null){
@@ -67,7 +67,7 @@ public class RR extends Critter
 						int n = (int) (Math.random() * locs.size());
 						Location next = locs.get(n);
 						SickCoyote sickcoyote = new SickCoyote();
-						sickcoyote.putSelfInGrid(getGrid(), sickcoyote);
+						sickcoyote.putSelfInGrid(getGrid(), next);
 					}
 				}
 			}
